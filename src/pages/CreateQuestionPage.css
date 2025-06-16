@@ -1,0 +1,64 @@
+.title-box,.marks-box{
+  width: 700px;
+  height: 30px;
+  padding: 10px;
+  border: 2px solid rgb(183, 215, 241);
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 16px;
+  font-family: Arial, sans-serif; 
+}
+
+.desc-box,.iformat-box,.oformat-box{
+  width: 700px;
+  height: 70px;
+  padding: 10px;
+  border: 2px solid rgb(183, 215, 241);
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 16px;
+  font-family: Arial, sans-serif; 
+}
+
+.qstatement-box{
+  width: 700px;
+  height: 100px;
+  padding: 10px;
+  border: 2px solid rgb(183, 215, 241);
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 16px;
+  font-family: Arial, sans-serif; 
+}
+
+.desc-box::placeholder,.iformat-box::placeholder,.marks-box::placeholder,.oformat-box::placeholder,.qstatement-box::placeholder,.title-box::placeholder{
+  color: rgb(183, 215, 241);
+}
+
+.submit-button{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 70px;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  background-color: rgb(0, 140, 255);
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  border: none;
+  border-style: solid;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
+}
+
+form p{
+  margin-left: 20px;
+  text-align: left;
+  color: rgb(0, 140, 255);
+}
+
+h2{
+  color: rgb(0, 140, 255);
+}

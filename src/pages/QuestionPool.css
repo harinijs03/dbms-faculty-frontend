@@ -1,0 +1,19 @@
+.create-question-button{
+  width: 150px;
+  height: 35px;
+  background-color: rgb(0, 140, 255);;
+  color: white;
+  font-weight: bold;
+  border:none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.create-question-button:hover{
+  opacity: 0.8;
+}
+.create-button-div{
+  margin: 20px;
+  display: flex;
+  justify-content: right;
+  padding-right: 30px;
+}
