@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import EditSchemaLine from '../components/EditSchemaLine';
+import EditAddSchema from '../components/EditAddSchema';
+import './EditQuestionPage.css'
 
 const EditQuestionPage = () => {
   const { id } = useParams();
@@ -10,25 +13,26 @@ const EditQuestionPage = () => {
     title: '',
     description: '',
     statement: '',
-    inputFormat: '',
-    outputFormat: '',
-    marks: ''
+    type: '',
+    marks: '',
+    schemas: []
   });
 
   const [loading, setLoading] = useState(true);
+  const [showSchemaModal, setShowSchemaModal] = useState(false);
 
   useEffect(() => {
     const fetchQuestion = async () => {
       try {
         const res = await axios.get(`http://localhost:5001/api/getoneques/${id}`);
-        const ques = res.data[0];
+        const ques = res.data;
         setNewQues({
           title: ques.title || '',
           description: ques.description || '',
           statement: ques.statement || '',
-          inputFormat: ques.inputFormat || '',
-          outputFormat: ques.outputFormat || '',
-          marks: ques.marks || ''
+          type: ques.type || '',
+          marks: ques.marks || '',
+          schemas: ques.schemas || [],
         });
         setLoading(false);
       } catch (err) {
@@ -40,6 +44,14 @@ const EditQuestionPage = () => {
     fetchQuestion();
   }, [id]);
 
+  useEffect(() => {
+  console.log('Updated schemas:', newQues.schemas);
+}, [newQues]);
+
+  const onSave = ()=>{
+
+  }
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setNewQues((prev) => ({
@@ -47,6 +59,11 @@ const EditQuestionPage = () => {
       [name]: value
     }));
   };
+
+  const renderComponent = ()=>{
+    if(!newQues.schemas) return <p>Loading...</p>
+    return <EditSchemaLine newQues={newQues} setNewQues={setNewQues}/>;
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -62,9 +79,22 @@ const EditQuestionPage = () => {
   };
 
   if (loading) return <div>Loading...</div>;
-
+  if(showSchemaModal) return(
+    showSchemaModal && (
+      <EditAddSchema
+        onSave={(newSchema) => {
+          setNewQues(prev => ({
+            ...prev,
+            schemas: [...prev.schemas, newSchema]
+          }));
+        }}
+        setShowSchemaModal={setShowSchemaModal}
+      />
+    )
+  )
   return (
-    <div>
+
+    <div className={showSchemaModal ? 'blur-background' : ''}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -89,19 +119,15 @@ const EditQuestionPage = () => {
           onChange={handleChange}
         />
 
-        <textarea
-          name="inputFormat"
-          className="iformat-box"
-          value={newQues.inputFormat}
-          onChange={handleChange}
-        />
-
-        <textarea
-          name="outputFormat"
-          className="oformat-box"
-          value={newQues.outputFormat}
-          onChange={handleChange}
-        />
+        <select value={newQues.type}
+          name="type"
+          className='type-dropdown'
+          onChange={handleChange}>
+          <option>Select type</option>
+          <option value="DDL">DDL</option>
+          <option value="DML">DML</option>
+          <option value="PLSQL">PL/SQL</option>
+        </select>
 
         <input
           type="number"
@@ -111,6 +137,16 @@ const EditQuestionPage = () => {
           value={newQues.marks}
           onChange={handleChange}
         />
+        <p>Schemas:</p>
+        <div>
+          {
+            renderComponent()
+          }
+        </div>
+        <button
+          className="addschema-button"
+          type="button"
+          onClick={() => setShowSchemaModal(true)}>Add Schema</button>
 
         <input type="submit" className="submit-button" value="Save" />
       </form>

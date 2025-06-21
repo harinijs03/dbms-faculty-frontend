@@ -1,0 +1,16 @@
+.type-dropdown{
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 720px;
+  height: 35px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid rgb(183, 215, 241);
+}
+
+.blur-background {
+  filter: blur(4px);
+  pointer-events: none;
+  user-select: none;
+}

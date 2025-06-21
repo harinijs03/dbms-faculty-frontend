@@ -35,7 +35,14 @@
   color: rgb(183, 215, 241);
 }
 
-.submit-button{
+.questype-dropdown{
+  width: 725px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  color: rgb(183, 215, 241);
+}
+
+.submit-button,.addschema-button{
   margin-top: 20px;
   margin-bottom: 20px;
   width: 70px;
@@ -61,4 +68,16 @@ form p{
 
 h2{
   color: rgb(0, 140, 255);
+}
+
+.createschema-div{
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.addschema-button{
+  width: 130px;
+  font-size: 17px;
+  height: 35px;
 }

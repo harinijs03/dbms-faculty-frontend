@@ -21,7 +21,7 @@ const PopulateTable = ({ columns, tableName, id, rowsNum: initialRowsNum, colsNu
         }
     }, [initialRowsNum, initialColsNum]);
 
-    const handleInputChange = (rowIndex, colIndex, value) => {
+    const handleInputChange = (rowIndex, colIndex, value)=> {
         setTableData(prevTableData => {
             const newTableData = [...prevTableData];
             newTableData[rowIndex] = [...newTableData[rowIndex]]; 

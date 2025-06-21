@@ -1,0 +1,46 @@
+.edit-testcase-button{
+  width: 50px;
+  margin: 10px;
+  height: 25px;
+  background-color: rgb(57, 128, 185);
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+
+.edit-testcase-button:hover{
+  background-color: white;
+  color: rgb(57, 128, 185);
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.15);
+  border-color: rgb(57, 128, 185);
+  border-style: solid;
+}
+
+.delete-testcase-button{
+  width: 50px;
+  margin: 10px;
+  height: 25px;
+  background-color: rgb(57, 128, 185);
+  cursor: pointer;
+  border-radius: 5px;
+  color: white;
+  border: none;
+}
+
+.delete-testcase-button:hover{
+  background-color: red;
+}
+
+.testcase-card{
+  width: 150px;
+  height: 100px;
+  box-shadow: 5px 5px 10px rgba(57,128,185,0.15);
+  margin-right: auto;
+  margin-left: auto;
+  background-color: rgb(187, 221, 248);
+}
+
+.testcase-card p{
+  padding-top: 5px;
+}

@@ -12,7 +12,8 @@ const ViewQuestionPage = () => {
     statement: '',
     inputFormat: '',
     outputFormat: '',
-    marks: ''
+    marks: '',
+    schemas: [],
   });
 
   const [loading, setLoading] = useState(true);
@@ -22,14 +23,13 @@ const ViewQuestionPage = () => {
     const fetchQuestion = async () => {
       try {
         const res = await axios.get(`http://localhost:5001/api/getoneques/${id}`);
-        const ques = res.data[0]; 
+        const ques = res.data; 
         setNewQues({
           title: ques.title || '',
           description: ques.description || '',
           statement: ques.statement || '',
-          inputFormat: ques.inputFormat || '',
-          outputFormat: ques.outputFormat || '',
-          marks: ques.marks || ''
+          marks: ques.marks || '',
+          schemas: ques.schemas || [], 
         });
         setLoading(false);
       } catch (err) {
@@ -39,6 +39,41 @@ const ViewQuestionPage = () => {
     };
     fetchQuestion();
   }, [id]);
+
+  const RenderTable = (column)=>{
+    if(!column) return <p>Loading...</p>
+    return column.map(col=>(
+      <tr>
+        <td>{col.columnName}</td>
+        <td>{col.type}</td>
+      </tr>
+    ))
+  }
+  const RenderSchemaItems = ()=>{
+    if(!newQues.schemas) return <p>Loading...</p>
+    return newQues.schemas.map(schema=>(
+      <div>
+        <p style={{
+          color: 'rgb(18, 107, 180)'
+        }}>Table - {schema.tableName}</p>
+        {
+            <table>
+              <thead>
+                <tr>
+                  <th>Columns</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                {
+                  RenderTable(schema.columns)
+                }
+              </tbody>
+            </table>
+        }
+      </div>
+    ))
+  }
 
   if (loading) return <div>Loading...</div>;
 
@@ -51,14 +86,18 @@ const ViewQuestionPage = () => {
         <input value={newQues.description} readOnly />
         <p>Statement:</p>
         <input value={newQues.statement} readOnly />
-        <p>Input Format:</p>
-        <input value={newQues.inputFormat} readOnly />
-        <p>Output Format:</p>
-        <input value={newQues.outputFormat} readOnly />
         <p>Marks:</p>
         <input value={newQues.marks} readOnly />
+        <p>Tables</p>
+        <div>
+          {RenderSchemaItems()}
+        </div>
       </div>
       <div>
+        <button onClick={()=>{
+          navigate(`/viewtestcase/${id}`);
+        }}
+        className='viewtestcase-button'>View Test Cases</button>
         <button onClick={() => {
           navigate(`/addtestcasepage/${id}`);
         }} className='addtestcase-button'>

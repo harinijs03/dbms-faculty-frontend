@@ -34,9 +34,25 @@ input{
   color: white;
   font-weight: bold;
   cursor: pointer;
-  border-radius: 4px;;
+  border-radius: 4px;
 }
 
 .addtestcase-button:hover{
   background-color: rgb(25, 105, 78);
+}
+
+.viewtestcase-button{
+  width: 200px;
+  height: 30px;
+  margin: 20px;
+  background-color: rgb(0, 140, 255);
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.viewtestcase-button:hover{
+  background-color: rgb(23, 82, 130);
 }

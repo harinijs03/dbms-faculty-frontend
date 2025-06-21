@@ -12,10 +12,10 @@ const QuestionLineItem = ({ques,handleDelete}) => {
       </div>
       <div className='button-div'>
       <button className='question-view-button' onClick={()=>{
-        navigate(`/viewquestion/${ques.id}`);
+        navigate(`/viewquestion/${ques._id}`);
       }} >View</button>
       <button className='question-edit-button' onClick={()=>{
-        navigate(`/editquestion/${ques.id}`);
+        navigate(`/editquestion/${ques._id}`);
       }}>Edit</button>
       <button className='question-delete-button' onClick={()=>{
         handleDelete(ques);

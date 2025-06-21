@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import './CreateSchema.css'
 
-const CreateSchema = ({rowsNum,setRowsNum,colsNum,setColsNum,tableName,setTableName,columns,setColumns,id,testcaseType}) => {
+const CreateSchema = ({rowsNum,setRowsNum,colsNum,setColsNum,tableName,setTableName,columns,setColumns}) => {
 
   useEffect(()=>{
       setColumns(prev=>{

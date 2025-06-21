@@ -26,17 +26,17 @@ const QuestionPool = () => {
   },[]);
 
   const updateQuestions = (id)=>{
-    const newQuestions = questions.filter(ques=>ques.id!==id);
+    const newQuestions = questions.filter(ques=>ques._id!==id);
     setQuestions(newQuestions);
   }
 
   const handleDelete = async(ques)=>{
     try{
-      const res = await axios.delete(`http://localhost:5001/api/deletequestion/${ques.id}`);
+      const res = await axios.delete(`http://localhost:5001/api/deletequestion/${ques._id}`);
       const data = res.data;
       if(data.msg){
         alert('Deleted');
-        updateQuestions(ques.id);
+        updateQuestions(ques._id);
       }
     }
     catch(err){
@@ -54,7 +54,7 @@ const QuestionPool = () => {
       <div>
         {
           questions&&questions.map(ques=>(
-            <QuestionsList ques={ques} key={ques.id} handleDelete={handleDelete}/>
+            <QuestionsList ques={ques} key={ques._id} handleDelete={handleDelete}/>
           ))
         }
       </div>

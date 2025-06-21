@@ -1,0 +1,16 @@
+.edit-schema-div{
+  width: 710px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.edit-schema-div input{
+  border: 2px solid rgb(183, 215, 241);
+}
+
+.edit-schema-div select{
+  border: 2px solid rgb(183, 215, 241);
+}
+
+.edit-schema-div p{
+  margin-left: 0px;
+}

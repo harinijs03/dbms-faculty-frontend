@@ -6,7 +6,9 @@ import QuestionPool from './pages/QuestionPool';
 import CreateQuestionPage from './pages/CreateQuestionPage';
 import EditQuestionPage from './pages/EditQuestionPage';
 import ViewQuestionPage from './pages/ViewQuestionPage';
-import AddTestcasesPage from './pages/AddTestcasesPage';
+import AddNewTestCasePage from './pages/AddNewTestCasePage';
+import TestCasesPool from './pages/TestCasesPool';
+import EditTestCasePage from './pages/EditTestCasePage';
 
 function App() {
   return (
@@ -17,7 +19,9 @@ function App() {
         <Route path='/createquestion' element={<CreateQuestionPage/>}/>
         <Route path='/editquestion/:id' element={<EditQuestionPage/>}/>
         <Route path='/viewquestion/:id' element={<ViewQuestionPage/>}/>
-        <Route path='/addtestcasepage/:id' element={<AddTestcasesPage/>}/>
+        <Route path='/addtestcasepage/:id' element={<AddNewTestCasePage/>}/>
+        <Route path='/viewtestcase/:id' element={<TestCasesPool/>}/>
+        <Route path='/edittestcase/:id' element={<EditTestCasePage/>}/>
       </Routes>
     </div>
   );

@@ -1,0 +1,61 @@
+.edit-container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.table-section {
+  margin-bottom: 30px;
+}
+
+.testcase-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.testcase-table th, .testcase-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.testcase-table th {
+  background-color: #f2f2f2;
+  text-align: left;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 4px;
+  box-sizing: border-box;
+}
+
+.form-actions {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.checkbox {
+  font-size: 16px;
+}
+
+.save-btn {
+  background-color: #3f51b5;
+  color: white;
+  padding: 8px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.save-btn:hover {
+  background-color: #303f9f;
+}
+
+.loading {
+  font-size: 18px;
+  color: gray;
+  text-align: center;
+}
