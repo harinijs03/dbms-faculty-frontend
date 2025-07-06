@@ -1,0 +1,57 @@
+#root, html, body{
+  margin: 0px;
+  padding: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+.tab-div{
+  display: flex;
+  margin-left: 0px;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  background-color: white;
+  height: 35px;
+}
+
+.tab-div button{
+    min-width: 85px;
+    color: rgb(0, 140, 255);
+    background-color: white;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 0px;
+    font-size: 0.9em;
+    outline: none;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: none;
+}
+
+.tab-div button:hover {
+  border-top-color: white;
+  border-left-color: white;
+  border-right-color: white;
+}
+
+.tab-div button.active{
+  background-color: white;
+  color: rgb(0, 140, 255);
+  border-bottom-color: rgb(0, 140, 255);
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  outline: none;
+}
+
+.main-div {
+  max-width: 1000px;
+  margin-left: 100px;
+  margin-right: 100px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+

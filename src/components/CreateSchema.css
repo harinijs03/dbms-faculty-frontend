@@ -1,0 +1,40 @@
+.outer-container-div{
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.tableName-input{
+  height: 25px;
+  margin-top: 10px;
+}
+
+.plus-button{
+  margin-left: 10px;
+  color: rgb(0, 140, 255);
+  font-size: 14px;
+  border-color: rgb(0, 140, 255);
+  border-width: 2px;
+  background-color: transparent;
+  font-weight: bold;
+}
+
+.column-input-div{
+  margin: 10px;
+  box-shadow: 5px 10px 10px rgba(0,0,0,0.15);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.column-input-div input{
+  height: 25px;
+  margin: 10px;
+}
+
+.column-input-div select{
+  height: 25px;
+}
+
+.checkbox-div{
+  display: flex;
+  flex-direction: row;
+}

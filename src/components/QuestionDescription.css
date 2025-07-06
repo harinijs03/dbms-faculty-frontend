@@ -1,0 +1,13 @@
+.container-div{
+  padding: 5px;
+  width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+.container-div p{
+  
+}
+.container-div input{
+  min-width: 100%;
+  
+}

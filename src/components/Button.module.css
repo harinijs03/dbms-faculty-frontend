@@ -1,0 +1,14 @@
+.button {
+    min-width: 75px;
+    border: 2px solid rgb(0, 140, 255);
+    color: rgb(0, 140, 255);
+    background-color: transparent;
+    padding: 5px;
+    border-radius: 5px;;
+    font-size: 0.9em;
+}
+
+.button:hover {
+    color: white;
+    background-color:rgb(0, 140, 255);
+}
